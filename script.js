@@ -1,8 +1,11 @@
 window.onload = () => {
-	let button = document.querySelector("#btn");
+	let button = document.querySelector("#calc");
+	
 
 	// Function for calculating BMI
 	button.addEventListener("click", calculateBMI);
+	
+	
 };
 
 function calculateBMI() {
@@ -18,7 +21,14 @@ function calculateBMI() {
 			.querySelector("#weight").value);
 
 	
-    let result = weight/(height*height);
-    //console.log(result.toFixed(2));
-    document.getElementById("output").value += result;
+    let result = weight/(height*height)*10000;
+ 	
+    document.getElementById("display").value += result.toFixed(2);;
     }
+	
+	let clear = document.querySelector("#clear");
+	clear.addEventListener("click", clearScrn);
+	function clearScrn(){
+		
+		document.getElementById("display").value ="";
+	}
